@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        <style>
+        a {font-family: Arial; font-size: xx-small;}
+    </style>
+    </style>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Santa</title>
+</head>
+<body>
+<a  style="opacity:.5"; align=”right”>    by Artyom Karavay</a>
+<div style="margin: auto; width: 500px">
+
+    <h4>Выберите ваше имя и вставьте в поле для ввода:</h4>
+
+    <hr>
+
+    <table>
+        <tr>
+            <td>
+                <table><form th:method="GET" th:action="@{/pair}">
+                    <tr>
+                        <td><input type="text" class="form-control" placeholder="name" name="name"></td>
+                        <td><input type="submit" class="btn btn-outline-success" value="Go!"></td>
+                    </tr>
+                </form>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table>
+        <div th:each="employee : ${all}">
+            <div class="list-group list-group-flush">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${employee.getFullName}"></h5>
+                </div>
+            </div>
+        </div>
+    </table>
+</div>
+</p>
+
+</body>
+</html>
