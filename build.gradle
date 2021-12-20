@@ -6,7 +6,6 @@ plugins {
 
 group = 'com.itransition'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -30,4 +29,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
